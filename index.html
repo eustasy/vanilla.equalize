@@ -1,0 +1,267 @@
+<!DocType html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="cleartype" content="on">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="keywords" content="vanilla.equalize equalize column heights javascript plugin css javascript eustasy Labs">
+		<meta name="description" content="vanilla.equalize is a small javascript Plugin to equalize the height of columns with a class within a containing group.">
+		<title>vanilla.equalize &nbsp;&middot;&nbsp; eustasy Labs</title>
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic">
+		<link rel="stylesheet" href="http://labs.eustasy.org/style.css">
+		<link rel="stylesheet" href="responsive.css">
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-45667989-11', 'eustasy.org');
+			ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<div id="skiptomain"><a href="#maincontent">skip to main content</a></div>
+		<div id="headcontainer">
+			<a href="https://github.com/eustasy/vanilla.equalize">
+				<img src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="vanilla.equalize on GitHub">
+			</a>
+			<header>
+				<h1>vanilla.equalize</h1>
+				<h5>by eustasy</h5>
+			</header>
+		</div>
+		<div id="maincontentcontainer">
+			<div id="maincontent">
+				<div class="section group">
+					<div class="col span_1_of_5"><br></div>
+					<div class="col span_3_of_5">
+						<p class="box-like">vanilla.equalize is a small javascript plugin to equalize the height of elements with the equalize class within groups, or the entire page. It is open-sourced by eustasy under the MIT License, and the minified version is less than 1 KB in size. That's small enough to inline into each page you want it on, or add it in to any existing script files. You might want to take a look at the <a href="vanilla.equalize.js">unminified version</a> if you want to understand what it is doing.</p>
+						<h4>It looks something like this.</h4>
+						<div class="box">
+							<!-- TODO -->
+							<textarea>function equalize(g,e){'use strict';g=g||'.group';e=e||'.equalize';$(g).each(function(){var h=0;$(e,this).css('height','auto');$(e,this).each(function(){if($(this).innerHeight()>h){h=$(this).innerHeight()}});$(e,this).innerHeight(h)})}</textarea>
+						</div>
+						<h6><small>That's actually all one line, promise.</small></h6>
+						<div class="breaker"></div>
+						<!-- TODO -->
+						<a href="https://github.com/eustasy/vanilla.equalize">
+							<div class="box download">
+								<h3>Download</h3>
+								<h6>v.1.7 &nbsp;&middot;&nbsp; Zip &nbsp;&middot;&nbsp; 6 KB</h6>
+							</div>
+						</a>
+					</div>
+					<div class="col span_1_of_5"><br></div>
+				</div>
+				<div class="breaker"></div>
+				<div class="section group">
+					<div class="col span_1_of_3">
+						<div class="box">
+							<h2>This Bit</h2>
+							<h3>is unequalized</h3>
+							<p>I can add loads of content here and make loads of whitespace to the right.</p>
+							<p class="faded">Color theory encompasses a multitude of definitions, concepts and design applications - enough to fill several encyclopedias. However, there are three basic categories of color theory that are logical and useful : The color wheel, color harmony, and the context of how colors are used.</p>
+							<p class="faded">Color theories create a logical structure for color. For example, if we have an assortment of fruits and vegetables, we can organize them by color and place them on a circle that shows the colors in relation to each other.</p>
+						</div>
+					</div>
+					<div class="col span_1_of_3">
+						<div class="box">
+							<h3>See how</h3>
+							<h4>messy this looks?</h4>
+						</div>
+					</div>
+					<div class="col span_1_of_3">
+						<div class="box">
+							<h4>almost like</h4>
+							<p>I was trying to give a designer a headache of magnificent proportions.</p>
+							<p class="faded">The kind that makes you hallucinate about riding a donkey at the beach, and the maw of a gigantic scorpion surfacing through the sand towards you, moving past to terrorise Blackpool.</p>
+							<p class="faded">Oh, wait, that was a Primeval episode.</p>
+						</div>
+					</div>
+				</div>
+				<div class="breaker"></div>
+				<div class="section group">
+					<div class="col span_1_of_3">
+						<div class="box equalize">
+							<h3>These columns are equalized</h3>
+							<p>Everything looks neater and easier to understand.</p>
+							<p class="faded">Color theory encompasses a multitude of definitions, concepts and design applications - enough to fill several encyclopedias. However, there are three basic categories of color theory that are logical and useful : The color wheel, color harmony, and the context of how colors are used.</p>
+							<p class="faded">Color theories create a logical structure for color. For example, if we have an assortment of fruits and vegetables, we can organize them by color and place them on a circle that shows the colors in relation to each other.</p>
+						</div>
+					</div>
+					<div class="col span_1_of_3">
+						<div class="box equalize">
+							<h3>See how</h3>
+							<h4>much better this looks?</h4>
+							<p>All of this was achieved by adding the equalize class within a group class.</p>
+						</div>
+					</div>
+					<div class="col span_1_of_3">
+						<div class="box equalize">
+							<h3>Designers Everywhere</h3>
+							<p>Will rejoice as things are pixel perfect.</p>
+							<p class="faded">The kind that makes you hallucinate about riding a donkey at the beach, and the maw of a gigantic scorpion surfacing through the sand towards you, moving past to terrorism Blackpool.</p>
+							<p class="faded">Oh, wait, that was a Primeval episode.</p>
+						</div>
+					</div>
+				</div>
+				<h4 class="box-like right">Try re-sizing the window!</h4>
+				<div class="breaker"></div>
+				<div class="section group">
+					<div class="col span_1_of_5"><br></div>
+					<div class="col span_3_of_5">
+						<h2 class="box-like">The Syntax</h2>
+						<p class="box-like">The syntax of vanilla.equalize is ridiculously simple, it uses the group class that is already utilized in many bootstraps, templates and boilerplates, and the equalize class to detect what elements it should be targeting. Don't forget to include a nice, recent version of vanilla and your copy of vanilla.equalize, or you can load it from Git (it's not on any CDNs i know of yet).</p>
+						<div class="box">
+
+
+
+<textarea>
+&lt;script&gt;
+	window.onload=function(){equalize()};
+	window.onresize=function(){equalize()};
+&lt;/script&gt;
+&lt;div class="group"&gt;
+	&lt;div class="equalize"&gt;&lt;/div&gt;
+	&lt;div class="equalize"&gt;&lt;/div&gt;
+	&lt;div class="equalize"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+
+
+
+						</div>
+						<h3 class="box-like">Nested </h3>
+						<p class="box-like">The equalized divs don't need to be directly below the group div, in fact, they don't even need to be divs. Anything that can have the height set via CSS will work fine. Note that it doesn't take padding into account, so that's up to you to handle how you will, either keeping them all the same or adding a div specifically for padding.</p>
+						<div class="box">
+
+
+
+<textarea>
+&lt;div class="section group"&gt;
+	&lt;div class="col span_1_of_3"&gt;
+		&lt;div class="box equalize"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="col span_1_of_3"&gt;
+		&lt;span class="equalize"&gt;What is this?&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div class="col span_1_of_3"&gt;
+		&lt;div class="h3 equalize"&gt;Spans and Headers?&lt;/h3&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+
+
+
+						</div>
+						<h3 class="box-like">What Not To Do, Sort Of</h3>
+						<p class="box-like">Here, there is a group within another group. This is actually okay, so long as you don't mind the equalized divs inside the second group expanding to match the first group, which they are technically a part of too.</p>
+						<div class="box">
+
+
+
+<textarea>
+&lt;div class="section group"&gt;
+	&lt;div class="col span_1_of_3"&gt;
+		&lt;div class="box equalize"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="col span_1_of_3"&gt;
+		&lt;div class="box equalize"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="col span_1_of_3"&gt;
+		&lt;div class="section group"&gt;
+			&lt;div class="col span_1_of_2"&gt;
+				&lt;div class="box equalize"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="col span_1_of_2"&gt;
+				&lt;div class="box equalize"&gt;&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+
+
+
+						</div>
+						<h2 class="box-like">Custom Classes</h2>
+						<p class="box-like">Custom group and equalize classes can be passed quickly and simply without modifying the source files and breaking your upgradability.</p>
+						<div class="box">
+
+
+
+<textarea>&lt;script src="vanilla.equalize.min.js&gt;&lt;/script&gt;
+&lt;script&gt;
+	window.onload=function(){
+		equalize('.some-strange-group','.equalize-me');
+	};
+	window.onresize=function(){
+		equalize('.some-strange-group','.equalize-me');
+	};
+&lt;/script&gt;
+&lt;div class="some-strange-group"&gt;
+	&lt;div class="equalize-me"&gt;&lt;/div&gt;
+	&lt;div class="equalize-me"&gt;&lt;/div&gt;
+	&lt;div class="equalize-me"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</textarea>
+						</div>
+						<div class="breaker"></div>
+						<h2 class="box-like">Responsive CSS</h2>
+						<p class="box-like">This example shows a small snippet of CSS designed to force height back to automatic when the screen width is smaller than a set amount. This stops large empty spaces appearing on mobile devices. You can modify the width and any other variables to suit your needs.</p>
+						<div class="box">
+
+
+
+<textarea>
+@media only screen and (max-width:799px) {
+	.equalize { height: auto !important; }
+}
+</textarea>
+
+
+
+						</div>
+						<div class="breaker"></div>
+						<!-- TODO -->
+						<a href="https://github.com/eustasy/vanilla.equalize">
+							<div class="box download">
+								<h3>Download</h3>
+								<h6>v.1.7 &nbsp;&middot;&nbsp; Zip &nbsp;&middot;&nbsp; 7 KB</h6>
+							</div>
+						</a>
+					</div>
+					<div class="col span_1_of_5"><br></div>
+				</div>
+			</div>
+		</div>
+		<div id="footercontainer">
+			<footer class="section group">
+				<div class="col span_5_of_8">
+					<p class="box-like left">Copyright &copy; 2015 eustasy</p>
+				</div>
+				<div class="col span_1_of_8"><p class="box-like center"><a href="https://github.com/eustasy/vanilla.equalize">GitHub</a></div>
+				<div class="col span_1_of_8"><p class="box-like center"><a href="https://github.com/eustasy/vanilla.equalize/releases">Releases</a></p></div>
+				<div class="col span_1_of_8"><p class="box-like center"><a href="https://github.com/eustasy/vanilla.equalize/blob/master/LICENSE.md">License (MIT)</a></div>
+			</footer>
+		</div>
+	
+		<script src="http://labs.eustasy.org/js/modernizr.min.js"></script>
+
+		<script src="vanilla.equalize.min.js"></script>
+		<script>
+			window.onload=function(){equalize()};
+			window.onresize=function(){equalize()};
+		</script>
+
+		<script src="http://labs.eustasy.org/js/jquery-2.0.3.min.js"></script>
+		<script src="http://labs.eustasy.org/js/jquery.autosize.min.js"></script>
+		<script>$(function(){$('textarea').autosize();});</script>
+		<script>$('textarea').one('click',function(){$(this).select();});</script>
+		<script>$('textarea').dblclick(function(){$(this).select();});</script>
+		
+	</body>
+</html>
