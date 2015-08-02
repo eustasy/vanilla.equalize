@@ -4,80 +4,22 @@
  * This file is a fork of jQuery.equalize for Vanilla JS
  */
 
-(function () {
+(function (exports, declare, augment, $) {
 	'use strict';
-	var Array = Array.prototype;
-
-	/**
-	 * Here comes a teeny-tiny jQuery shim (just because
-	 * it seemed more convenient to have one handy instead
-	 * of having to fiddle with the raw thing).
-	 * PS: It could also be moved in a separate script and
-	 * included before this one.
-	 */
-	var $ = $ || function (sel, ctx) {
-		'use strict';
-		switch (typeof sel) {
-			case 'string':
-				ctx = ctx || document;
-				sel = ctx.querySelectorAll(sel);
-				return {
-					each: function (callback) {
-						'use strict';
-						Array.forEach.call(sel, callback);
-						return this;
-					},
-					css: function (key, val) {
-						'use strict';
-						this.each(function (item) {
-							'use strict';
-							item.style[key] = val;
-						});
-						return this;
-					},
-					innerHeight: function (val) {
-						'use strict';
-						this.each(function (item) {
-							'use strict';
-							item.style.height = val;
-						});
-						return this;
-					}
-				};
-
-			case 'object':
-				if (sel == null) {
-					throw "Bad usage of $ - the first argument is null";
-				}
-				return {
-					innerHeight: function () {
-						'use strict';
-						return sel.innerHeight;
-					}
-				}
-
-			case 'undefined':
-				throw "Bad usage of $ - nothing given as first argument";
-
-			default:
-				throw "$ doesn't currently work on a " + (typeof sel);
-		}
-	};
+	augment(Array, ['forEach']);
 
 	/**
 	 * This function is (almost) exactly the same
 	 * as in jQuery.equalize (modulo a few tweaks)
 	 */
-	equalize = function (group, equalize) {
-		'use strict';
+	var equalize = declare(function (group, equalize) {
 		group = group || '.group';
 		equalize = equalize || '.equalize';
 		$(group).each(function () {
-			'use strict';
 			var highestBox = 0;
 
 			$(equalize, this).
-				css('height', 'auto').
+				//css('height', 'auto').
 				each(function () {
 					if($(this).innerHeight() > highestBox) {
 						highestBox = $(this).innerHeight();
@@ -85,25 +27,99 @@
 				}).
 				innerHeight(highestBox);
 		});
-	};
+	}, 'equalize');
 
 	// When the page has loaded
-	window.addEventListener('DOMContentLoaded', function () {
-		'use strict';
+	$(window).on('DOMContentLoaded', function () {
 		equalize(); // Run the function 
 	});
 
 	// And every time the window is resized
 	var resizeTimeout;
-	window.addEventListener("resize", function () {
-		'use strict';
+	$(window).on('resize', function () {
 	    if (resizeTimeout) return;
 
     	// Will execute at a rate of 15fps
 		resizeTimeout = setTimeout(function() {
-			'use strict';
 			resizeTimeout = null;
 			equalize(); // Here we go again
     	}, 66);
-	}, false);
-})();
+	});
+})(window,
+/**
+ * Export obj by given name
+ */
+function declare (obj, name) {  
+	'use strict';
+	window[name] = obj;
+	return obj;
+},
+/**
+ * Augment Class with some of its prototype
+ */
+function augment (Class, keys) {
+	'use strict';
+	var slice = Array.prototype.slice;
+	keys.forEach(function (key) {
+		var method = Class.prototype[key];
+		Class[key] = function () {
+			var args = slice.call(arguments, 1);
+			method.apply(arguments[0], args);
+		};
+	});
+}, window.jQuery ||
+/**
+ * Here comes a teeny-tiny jQuery shim (just because
+ * it seemed more convenient to have one handy instead
+ * of having to fiddle with the raw thing).
+ * PS: It could also be moved in a separate script and
+ * included before this one.
+ */
+function jQuery (sel, ctx) {
+	'use strict';
+	switch (typeof sel) {
+		case 'string':
+			ctx = ctx || document;
+			sel = ctx.querySelectorAll(sel);
+			return {
+				each: function (callback) {
+					Array.forEach(sel, function each (item, index) {
+						callback.call(item, index, item);
+					});
+					return this;
+				},
+				css: function (key, val) {
+					Array.forEach(sel, function each (item) {
+						item.style[key] = val;
+					});
+					return this;
+				},
+				innerHeight: function (val) {
+					Array.forEach(sel, function each (item) {
+						item.style.height = val;
+					});
+					return this;
+				}
+			};
+
+		case 'object':
+			if (sel == null) {
+				throw "Bad usage of $ - the first argument is null";
+			}
+			return {
+				innerHeight: function () {
+					return sel.clientHeight;
+				},
+				on: function (event, handler) {
+					sel.addEventListener(event, handler);
+					return this;
+				}
+			}
+
+		case 'undefined':
+			throw "Bad usage of $ - nothing given as first argument";
+
+		default:
+			throw "$ doesn't currently work on a " + (typeof sel);
+	}
+});

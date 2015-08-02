@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vanilla.equalize.js</title>
+		<script src="vanilla.equalize.js"></script>
+		<style>
+			.group > .equalize {
+				background: blue;
+			}
+			.green > .equalize {
+				background: green;
+			}
+			.equalize {
+				display: inline-block;
+				margin: 10px;
+				width: 60px;
+			}
+			.small {
+				height: 50px;
+			}
+			.large {
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body lang="en">
+		<div class="group">
+			<div class="equalize small"></div>
+			<div class="equalize large"></div>
+		</div>
+		<div class="green">
+			<div class="equalize small"></div>
+			<div class="equalize large"></div>
+		</div>
+	</body>
+</html>
