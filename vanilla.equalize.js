@@ -4,6 +4,8 @@
  * This file is a fork of jQuery.equalize for Vanilla JS
  */
 
+/*global equalize*/
+
 (function (exports, augment, $) {
 	'use strict'
 	augment(Array, ['forEach'])
@@ -92,7 +94,7 @@ function jQuery (sel, ctx) {
 						item.style.height = val + 'px'
 					})
 					return this
-				}
+				},
 			}
 
 		case 'object':
@@ -106,7 +108,7 @@ function jQuery (sel, ctx) {
 				on: function (event, handler) {
 					sel.addEventListener(event, handler)
 					return this
-				}
+				},
 			}
 
 		case 'undefined':
