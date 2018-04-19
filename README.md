@@ -6,3 +6,4 @@ A small script to equalize the height of elements within groups, or the entire p
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/372a6461e2fd44a48b67d59ad87d6541)](https://www.codacy.com/app/lewisgoddard/vanilla-equalize?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=eustasy/vanilla.equalize&amp;utm_campaign=Badge_Grade)
 [![Code Climate](https://codeclimate.com/github/eustasy/vanilla.equalize/badges/gpa.svg)](https://codeclimate.com/github/eustasy/vanilla.equalize)
 [![Bountysource](https://www.bountysource.com/badge/tracker?tracker_id=20500258)](https://www.bountysource.com/teams/eustasy/issues?tracker_ids=20500258)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/gh/eustasy/vanilla.equalize/badge?style=rounded)](https://www.jsdelivr.com/package/gh/eustasy/vanilla.equalize)
